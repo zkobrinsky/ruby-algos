@@ -25,24 +25,24 @@ end
 
 
 # second attempt
-def array_manipulation(n, queries)
-    inputs = Hash.new { |hash, key| hash[key] = [0,0]}
-    queries.each do |num|
-        a = num[0]
-        b = num[1]
-        k = num[2]
-        inputs[a][0] += k
-        inputs[b+1][1] -= k
-    end
-        curval = 0
-        curmax = -1
-        inputs.keys.sort.each do |key|
-        curval += inputs[key][0]
-        curmax = [curmax, curval].max
-        curval += inputs[key][1]
-    end
-    curmax
-end
+# def array_manipulation(n, queries)
+#     inputs = Hash.new { |hash, key| hash[key] = [0,0]}
+#     queries.each do |num|
+#         a = num[0]
+#         b = num[1]
+#         k = num[2]
+#         inputs[a][0] += k
+#         inputs[b+1][1] -= k
+#     end
+#         curval = 0
+#         curmax = -1
+#         inputs.keys.sort.each do |key|
+#         curval += inputs[key][0]
+#         curmax = [curmax, curval].max
+#         curval += inputs[key][1]
+#     end
+#     curmax
+# end
 
 
 
