@@ -8,14 +8,20 @@ def array_manipulation(n, queries)
     (queries.length+1).times do |inner_num|
         index = inner_num-1
         if inner_num == 0 
-            n.times {array << 0}
+            array = Array.new(n) {|i| i = 0}
         else
             insert_size = array[queries[index][0]-1..queries[index][1]-1].length
-            array[queries[index][0]-1..queries[index][1]-1] = Array.new(insert_size) {|i| i = queries[index][2]}
+            array.each_with_index do |element, inner_index|
+                range = Array(queries[index][0]-1..queries[index][1]-1)
+                if range.include? inner_index
+                    array[inner_index] += queries[index][2]
+                end
+            end
         end
-        print array
     end
-    
+    array.max()
 end
 
-array_manipulation(n, queries)
+puts array_manipulation(n, queries)
+
+# = Array.new(insert_size) {|i| i = queries[index][2]}
