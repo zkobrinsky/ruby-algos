@@ -1,4 +1,5 @@
 require 'pry'
+# https://www.hackerrank.com/challenges/array-left-rotation/problem
 
 arr = *(1..5)
 
