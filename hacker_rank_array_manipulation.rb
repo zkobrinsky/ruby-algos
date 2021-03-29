@@ -9,7 +9,7 @@ def array_manipulation(n, queries)
     (queries.length+1).times do |inner_num|
         index = inner_num-1
         if inner_num == 0 
-            array = Array.new(n) {|i| i = 0}
+            array = Array.new(n,0)
         else
             insert_size = array[queries[index][0]-1..queries[index][1]-1].length
             array.each_with_index do |element, inner_index|
